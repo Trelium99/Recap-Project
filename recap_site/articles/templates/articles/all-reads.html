@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+    <div>
+        <h1>All things to read:</h1>
+    </div>
+        {% for item in articles %}
+            <div id="posts-indi" class="form_all">
+                <h2>{{ item.title }}</h2>
+                <h3>{{ item.description }}</h3>
+                <span><p>{{ item.author }}</p><p>{{ item.date }}</p></span>
+                <a href="{% url 'single_posts' item.slug %}"><button>Read More</button></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

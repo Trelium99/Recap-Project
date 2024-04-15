@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}{% endblock %}
+{% block content %}
+    <h1>Register New User</h1>
+    <div class="form_all">
+        <form action="{% url 'register-page' %}" method="POST" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Register</button>
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'home-page' %}"><button>Return</button></a>
+    </div>
+{% endblock %}

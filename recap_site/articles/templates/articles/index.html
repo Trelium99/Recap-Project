@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to Interesting Reads!</h1>
+    <h2 id="subhead">Login or Register to have a read.</h2>
+    <span><a href="{% url 'login-page' %}"><button>Login</button></a><a href="{% url 'register-page' %}"><button>Register</button></a></span>
+{% endblock %}

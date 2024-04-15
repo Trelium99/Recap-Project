@@ -1,0 +1,18 @@
+{% extends "base.html "%}
+
+{% block content %}
+    <h1>Login</h1>
+    <div  class="form_all">
+        <form id="form_test" action="{% url 'login-page' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for="">{{ field.label }}</label>
+            {{ field }}
+            {% endfor %}
+            <button>Login</button>
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'home-page' %}"><button>Return</button></a>
+    </div>
+{% endblock%}
